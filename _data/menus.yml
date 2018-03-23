@@ -1,8 +1,18 @@
+---
 header:
-  - url: /option-1
-    title: Nav option 1
-    identifier: nav1
-  - url: /option-2
-    title: Nav option 2
-    identifier: nav2
-
+- url: "/nested-2"
+  weight: 1
+  parent: nav2
+  title: Nested nav option 2
+- url: "/nested-1"
+  weight: 1
+  parent: nav2
+  title: Nested nav option 1
+- identifier: nav2
+  url: "/option-2"
+  weight: 2
+  title: Nav option 2
+- identifier: nav1
+  url: "/option-1"
+  weight: 1
+  title: Nav option 1
