@@ -1,0 +1,13 @@
+port: 7776
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - gulpfile.js
+baseurl: /dad
+sass:
+  load_paths:
+    - assets/_scss
+    - node_modules
+  style: compressed

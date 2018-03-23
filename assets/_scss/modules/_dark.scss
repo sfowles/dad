@@ -1,0 +1,122 @@
+// Light background parent module
+.dark-container {
+	padding: 0 0 10em;
+	background: $bgDarkGray;
+	.intro {
+		padding: 180px 0 0;
+		text-align: center;
+		max-width: 360px;
+		font-weight: 300;
+		margin: 0 auto;
+		h2 {
+			color: $white;
+		}
+		p {
+			color: $fgDarkGray;
+			line-height: 24px;
+			margin: 0 0 50px;
+		}
+	}
+	.checkboxes, .radiobuttons {
+		label {
+			color: $white;
+		}
+	}
+	.label-active {
+		color: $white;
+	}
+	input[type=text], textarea, select {
+		background: $bgLightGray;
+		border: 1px solid $bgDarkGray;
+		&:hover, &:focus {
+			border-bottom: 4px solid;
+			border-color: $fgDarkBlue;
+		}
+	}
+	select:hover, select:focus {
+		height: 56px;
+	}
+	.single-column {
+		p {
+			color: $fgLightGray;
+		}
+		h1 {
+			color: $white;
+		}
+		h2 {
+			color: $white;
+		}
+		.l-snippet, .r-snippet {
+			background: $fgDarkGray;
+			color: $bgLightGray;
+		}
+		.quote {
+			.author {
+				color: $fgDarkGray;
+			}
+		}
+	}
+	.comments {
+		color: $white;
+		h2 {
+			font-size: 40px;
+			font-weight: 300;
+			margin-top: 0;
+			text-align: center;
+		}
+		a {
+			color: $fgMidGray;
+			&:hover {
+				color: $fgLightGray;
+			}
+			&:after {
+				background: $fgLightBlue;
+			}
+		}
+	}
+	.top-posts {
+		h2 {
+			color: $white;
+		}
+		.post:hover > .details p {
+			color: $fgLightGray;
+		}
+	}
+	.archives {
+		ul li {
+			border-top: 1px solid $fgDarkGray;
+		}
+		ul li:first-child {
+			border-top: 4px solid $fgMidGray;
+		}
+		p {
+			color: $fgLightGray;
+		}
+		.details {
+			color: $fgMidGray;
+			&:before {
+				color: $fgDarkGray;
+			}
+		}
+		a {
+			color: $fgLightGray;
+			&:hover {
+				color: $fgLightBlue;
+			}
+		}
+		.blue {
+			color: $white;
+		}
+	}
+	.footer {
+		ul li:first-child {
+			color: $white;
+		}
+	}
+	a:hover {
+				color: $white;
+			}
+	.social {
+		color: $white;
+	}
+}

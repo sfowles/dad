@@ -28,7 +28,7 @@ Here are the default SASS color variables for the theme:
 ### Background colors:
 
 	$bgMain // Light gray (bg)
-	$bgThemeBlack // Theme black 
+	$bgThemeBlack // Theme black
 	$bgThemeBlack50 // Theme black @ 50% opacity
 	$bgBlueGray // Dark bluish gray
 	$bgLightGray // Light gray (bg)
@@ -78,7 +78,7 @@ All form elements have animated labels. The labels are made using standard HTML,
 
 Form fields come in the following shapes and sizes:
 
-### width: 
+### width:
 
 	.small
 	.medium

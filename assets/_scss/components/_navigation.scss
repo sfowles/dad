@@ -1,0 +1,221 @@
+#navigation {
+	.nav-container {
+		position: fixed;
+		padding: 15px;
+		height: 50px;
+		width: 100%;
+		top: 0;
+		right: 0;
+		z-index: 9998;
+		&:hover {
+			opacity: 1;
+			@include transition(all, .1s, ease-in-out);
+		}
+		.menu-overlay {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $bgThemeBlack50;
+			z-index: 998;
+		}
+		.hamburger {
+			position: absolute;
+			display: block;
+			width: 30px;
+			height: 30px;
+			right: 50px;
+			top: 24px;
+			cursor: pointer;
+			opacity: 0.3;
+			z-index: 999;
+			@include transition(all, .2s, ease-in-out);
+			&:hover {
+				opacity: 1;
+			}
+			span {
+				display: block;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				background: $white;
+				width: 20px;
+				height: 5px;
+				@include transition(all, .1s, ease-in-out);
+			}
+			.top, .o-top {
+				left: 20px;
+				top: 10px;
+			}
+			.mid, .o-mid {
+				left: 20px;
+				top: 18px;
+			}
+			.bot, .o-bot {
+				left: 20px;
+				top: 26px;
+			}
+			.u-top {
+				left: 1px;
+				top: 10px;
+			}
+			.u-mid {
+				left: 1px;
+				top: 18px;
+			}
+			.u-bot {
+				left: 1px;
+				top: 26px;
+			}
+			.o-white {
+				background: $bgThemeBlack;
+			}
+		}
+		.opacity {
+			opacity: 1;
+		}
+		.ham:before {
+			content: "Menu";
+			position: relative;
+			top: 8px;
+			left: -45px;
+			padding-right: 3px;
+			font-size: 20px;
+			font-weight: 400;
+			color: $white;
+			@include transition(all, 0.2s, ease-in-out);
+		}
+		.close {
+			display: none;
+			position: relative;
+			float: right;
+			top: 17px;
+			left: -45px;
+			font-weight: 300;
+			font-size: 20px;
+			color: $white;
+			margin-right: 30px;
+			z-index: 9999;
+		}
+		.o-white:before {
+			color: $bgThemeBlack;
+		}
+		.menu {
+			position: fixed;
+			background: $fgDarkBlue;
+			color: $white;
+			top: 0;
+			right: -100%;
+			height: 100%;
+			width: 100%;
+			padding: 100px 0 0;
+			z-index: 998;
+			overflow-y: auto;
+			overflow-x: hidden;
+			@include transition(all, 0.2s, ease-in-out);
+			ul {
+				list-style: none;
+				text-indent: none;
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				a {
+					display: block;
+					padding: 15px 50px 15px 0;
+					text-align: right;
+					opacity: 0.6;
+					font-size: 16px;
+					color: $white;
+					font-weight: 300;
+					text-decoration: none;
+					&:hover {
+						opacity: 1;
+						background: $fgLightBlue;
+					}
+				}
+				ul {
+					display: none;
+					li {
+						a {
+							display: block;
+							padding: 15px 70px 15px 0;
+							text-align: right;
+							opacity: 0.6;
+							background: $fgLightBlue;
+							font-size: 14px;
+							font-weight: 300;
+							text-decoration: none;
+							&:hover {
+								opacity: 1;
+								background: $fgLightBlue;
+							}
+						}
+					}
+				}
+				.nested {
+					&:after {
+						content: "+";
+						position: absolute;
+						margin: .15em 0 0 1em;
+						font-size: 14px;
+						font-weight: 700;
+						color: $fgLighterBlue;
+					}
+				}
+				.o-nested {
+					padding-right: 70px;
+					background: $fgLightBlue;
+					color: $white;
+					opacity: 1;
+					&:hover {
+						&:after {
+							content: "";
+							position: absolute;
+							margin-left: 3em;
+						}
+					}
+				}
+			}
+			.social {
+				margin: 0 3em 10em;
+				padding: 1em 0;
+				text-align: right;
+				cursor: pointer;
+				span {
+					display: inline-block;
+					width: 25px;
+					opacity: 0.6;
+					@include transition(all, 0.2s, ease-in-out);
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		.o-menu {
+			right: 0;
+		}
+	}
+}
+.logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(img/logo-example.svg) top left no-repeat;
+	height: 50px;
+	margin: 15px 15px 15px 40px;
+	padding: 20px 0 0 60px;
+	font-size: 16px;
+	font-weight: bold;
+	color: $white;
+	z-index: 9999;
+	opacity: 0.6;
+	cursor: pointer;
+	@include transition(all, 0.2s, ease-in-out);
+	&:hover {
+		opacity: 1;
+	}
+}
