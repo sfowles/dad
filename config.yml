@@ -6,6 +6,7 @@ exclude:
   - package.json
   - gulpfile.js
 baseurl: /dad
+url: /dad
 sass:
   load_paths:
     - assets/_scss
