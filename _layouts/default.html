@@ -2,14 +2,39 @@
     <head>
         <meta charset='utf-8'>
         <title>{% if page.title %}{{ page.title }} - {% endif %}Brad Fowles Art</title>
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/style.css" type="text/css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
         {{ content }}
-        <nav>
-            {% assign menu = site.menus.header %}
-            {% include menus.html %}
+
+        <!-- navigation (topbar) -->
+        <nav id="navigation">
+            <div class="logo">DreamHost</div>
+            <div class="nav-container">
+                <div class="menu-overlay"></div>
+                <div class="close">Hide</div>
+                <div class="hamburger ham">
+                    <span class="top"></span>
+                    <span class="mid"></span>
+                    <span class="bot"></span>
+                    <span class="o-top"></span>
+                    <span class="o-mid"></span>
+                    <span class="o-bot"></span>
+                </div>
+                <div class="menu">
+                    {% assign menu = site.menus.header %}
+                    {% include menus.html %}
+                    <div class="social">
+                        <span class="icon-twitter"></span>
+                        <span class="icon-facebook"></span>
+                        <span class="icon-dribbble"></span>
+                        <span class="icon-g-plus"></span>
+                        <span class="icon-github"></span>
+                        <span class="icon-instagram"></span>
+                    </div>
+                </div>
+            </div>
         </nav>
     </body>
 </html>

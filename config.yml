@@ -1,6 +1,6 @@
 port: 7776
 markdown: kramdown
-plugins:
+plugins_dir:
   - jekyll-menus
 exclude:
   - Gemfile
@@ -8,7 +8,6 @@ exclude:
   - package.json
   - gulpfile.js
 baseurl: /dad
-url: /dad
 sass:
   load_paths:
     - assets/_scss
