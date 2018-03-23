@@ -1,12 +1,16 @@
 {% if menu %}
 <ul>
   {% for item in site.menus.header %}
-    <li class="menu-item-{{ loop.index }}">
-      <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
+    <li>
       {% if item.children %}
-        <ul class="sub-menu">
+      <a href="{{ item.url }}" title="Go to {{ item.title }}" class="nested">{{ item.title }}</a>
+      {% else %}
+      <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
+      {% endif %}
+      {% if item.children %}
+        <ul>
         {% for item in item.children %}
-          <li class="menu-item-{{ loop.index }}">
+          <li>
             <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
           </li>
         {% endfor %}
