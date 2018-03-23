@@ -1,10 +1,8 @@
 ---
 header:
-- identifier: nav2
-  url: "/option-2"
-  weight: 1
-  title: Nav option 2
 - identifier: nav1
   url: "/option-1"
-  weight: 2
   title: Nav option 1
+- identifier: nav2
+  url: "javascript:void(0)"
+  title: Nav option 2
