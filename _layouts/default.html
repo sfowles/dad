@@ -7,5 +7,9 @@
     </head>
     <body>
         {{ content }}
+        <nav>
+            {% assign menu = site.menus.header %}
+            {% include menus.html %}
+        </nav>
     </body>
 </html>

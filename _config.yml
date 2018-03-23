@@ -1,5 +1,7 @@
 port: 7776
 markdown: kramdown
+plugins:
+  - jekyll-menus
 exclude:
   - Gemfile
   - Gemfile.lock
