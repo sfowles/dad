@@ -21,5 +21,7 @@
     "gulp-uglify": "^2.0.1"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "stylelint": "^9.1.3"
+  }
 }
