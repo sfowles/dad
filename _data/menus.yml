@@ -7,6 +7,7 @@ header:
 - identifier: nav2
   url: "javascript:void(0)"
   title: Nav option 2
+  description: testing descriptions
 - identifier: nav3
   url: "javascript:void(0)"
   title: Nav option 3

@@ -149,7 +149,6 @@
 			.menu-title {
 				font-size: 18px;
 				color: $white;
-				font-family: 'Noto Serif', serif;
 				@include transition(all, 0.2s, ease-in-out);
 			}
 			.menu-description {
@@ -189,6 +188,12 @@
 						margin-left: 3em;
 					}
 				}
+			}
+			.sub-nav-container ul.u-opened {
+				animation: nested2 .2s linear;
+			}
+			.u-nested {
+				animation: subnav2 .3s linear;
 			}
 			.sub-nav-back {
 				width: 0;
@@ -339,14 +344,41 @@
 
 @keyframes nested {
 	0% {
-		opacity: 0;
-		transform: scale(1);
+		opacity: 1;
 		margin-top: 0;
+		left: 0;
 	}
 	99% {
 		opacity: 0;
-		transform: scale(0.9);
 		margin-top: 0;
+		left: -100px;
+	}
+	100% {
+		margin-top: -9999px;
+	}
+}
+
+@keyframes subnav2 {
+	0% {
+		opacity: 0;
+		left: -100px;
+	}
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}
+
+@keyframes nested2 {
+	0% {
+		opacity: 1;
+		margin-top: 0;
+		left: -100px;
+	}
+	99% {
+		opacity: 0;
+		margin-top: 0;
+		left: 0;
 	}
 	100% {
 		margin-top: -9999px;
@@ -356,11 +388,11 @@
 @keyframes subnav {
 	0% {
 		opacity: 0;
-		transform: scale(1.2);
+		left: 100px;
 	}
 	100% {
 		opacity: 1;
-		transform: scale(1);
+		left: 0;
 	}
 }
 

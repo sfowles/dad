@@ -231,7 +231,7 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu:before { position: absolute; top: 0; left: 0; display: block; background: #001e12; opacity: 0.8; width: 100%; height: 100%; content: ''; }
 
-#navigation .nav-container .menu .menu-title { font-size: 18px; color: #fff; font-family: 'Noto Serif', serif; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+#navigation .nav-container .menu .menu-title { font-size: 18px; color: #fff; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
 #navigation .nav-container .menu .menu-description { margin-top: 16px; font-weight: 400; font-size: 12px; font-family: 'Roboto', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
 
@@ -244,6 +244,10 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 #navigation .nav-container .menu .o-nested, #navigation .nav-container .menu .sub-nav-container ul.u-opened { animation: nested .2s 1 linear; animation-fill-mode: forwards; padding-right: 70px; color: #fff; opacity: 1; }
 
 #navigation .nav-container .menu .o-nested:hover:after, #navigation .nav-container .menu .sub-nav-container ul.u-opened:hover:after { content: ""; position: absolute; margin-left: 3em; }
+
+#navigation .nav-container .menu .sub-nav-container ul.u-opened { animation: nested2 .2s linear; }
+
+#navigation .nav-container .menu .u-nested { animation: subnav2 .3s linear; }
 
 #navigation .nav-container .menu .sub-nav-back { width: 0; overflow: hidden; position: absolute; top: -180px; left: 30px; cursor: pointer; }
 
@@ -298,18 +302,31 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
   30%, 100% { margin-top: -30px;
     opacity: 0; } }
 
-@keyframes nested { 0% { opacity: 0;
-    transform: scale(1);
-    margin-top: 0; }
+@keyframes nested { 0% { opacity: 1;
+    margin-top: 0;
+    left: 0; }
   99% { opacity: 0;
-    transform: scale(0.9);
-    margin-top: 0; }
+    margin-top: 0;
+    left: -100px; }
+  100% { margin-top: -9999px; } }
+
+@keyframes subnav2 { 0% { opacity: 0;
+    left: -100px; }
+  100% { opacity: 1;
+    left: 0; } }
+
+@keyframes nested2 { 0% { opacity: 1;
+    margin-top: 0;
+    left: -100px; }
+  99% { opacity: 0;
+    margin-top: 0;
+    left: 0; }
   100% { margin-top: -9999px; } }
 
 @keyframes subnav { 0% { opacity: 0;
-    transform: scale(1.2); }
+    left: 100px; }
   100% { opacity: 1;
-    transform: scale(1); } }
+    left: 0; } }
 
 @keyframes blind { 0%, 40% { width: 0; }
   100% { width: 100px; } }
