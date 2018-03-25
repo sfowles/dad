@@ -152,11 +152,6 @@
 				font-family: 'Noto Serif', serif;
 				@include transition(all, 0.2s, ease-in-out);
 			}
-			.menu-title-sub {
-				font-size: 16px;
-				color: $white;
-				font-family: 'Noto Serif', serif;
-			}
 			.menu-description {
 				margin-top: 16px;
 				font-weight: 400;
@@ -169,14 +164,47 @@
 				position: absolute;
 				top: 70px;
 				left: 0;
+				width: 100%;
 			}
 			.sub-nav-container ul {
 				display: none;
 			}
-			.sub-nav-container ul.opened {
+			.sub-nav-container ul.opened,
+			.u-nested {
 				display: block;
 				animation: subnav .3s 1 linear;
 				animation-fill-mode: forwards;
+			}
+			.o-nested,
+			.sub-nav-container ul.u-opened {
+				animation: nested .2s 1 linear;
+				animation-fill-mode: forwards;
+				padding-right: 70px;
+				color: $white;
+				opacity: 1;
+				&:hover {
+					&:after {
+						content: "";
+						position: absolute;
+						margin-left: 3em;
+					}
+				}
+			}
+			.sub-nav-back {
+				width: 0;
+				overflow: hidden;
+				position: absolute;
+				top: -180px;
+				left: 30px;
+				cursor: pointer;
+			}
+			.opened .sub-nav-back {
+				animation: blind .8s 1 linear;
+				animation-fill-mode: forwards;
+			}
+			.menu-wrapper,
+			.sub-nav-container ul {
+				position: absolute;
 			}
 			ul {
 				list-style: none;
@@ -223,20 +251,6 @@
 						font-size: 14px;
 						font-weight: 700;
 						color: lighten($deepForestGreen, 30%);
-					}
-				}
-			}
-			.o-nested {
-				animation: nested .2s 1 linear;
-				animation-fill-mode: forwards;
-				padding-right: 70px;
-				color: $white;
-				opacity: 1;
-				&:hover {
-					&:after {
-						content: "";
-						position: absolute;
-						margin-left: 3em;
 					}
 				}
 			}
@@ -304,11 +318,11 @@
 @keyframes menuwrapper {
 	0%, 25% {
 		opacity: 0;
-		margin-top: 170px;
+		margin-top: 20px;
 	}
 	50%, 100% {
 		opacity: 1;
-		margin-top: 150px;
+		margin-top: 0;
 	}
 }
 
@@ -325,7 +339,7 @@
 
 @keyframes nested {
 	0% {
-		opacity: 1;
+		opacity: 0;
 		transform: scale(1);
 		margin-top: 0;
 	}
@@ -347,5 +361,14 @@
 	100% {
 		opacity: 1;
 		transform: scale(1);
+	}
+}
+
+@keyframes blind {
+	0%, 40% {
+		width: 0;
+	}
+	100% {
+		width: 100px;
 	}
 }

@@ -30,7 +30,7 @@ $(document).ready(function(){
 		} else {
 			$(".menu").toggle("blind", {"direction": "left"}, 500);
 			$(".menu-right").toggle("blind", {"direction": "left"}, 500);
-			$('.menu-wrapper').removeClass('u-menu-wrapper o-nested');
+			$('.menu-wrapper').removeClass('u-menu-wrapper o-nested u-nested');
 			$('.menu-wrapper').toggleClass('o-menu-wrapper');
 		}
 	};
@@ -54,7 +54,7 @@ $(document).ready(function(){
 		$('.menu-overlay').fadeOut('slow');
 		$('.close').hide();
 		$('.nested').removeClass('o-nested');
-		$('.menu-wrapper').removeClass('o-menu-wrapper o-nested');
+		$('.menu-wrapper').removeClass('o-menu-wrapper o-nested u-nested');
 		$('.menu-wrapper').addClass('u-menu-wrapper');
 		$('.sub-nav-container ul').removeClass('opened');
 	}
@@ -113,6 +113,8 @@ $(document).ready(function(){
 
 		e.preventDefault();
 		$('.menu-wrapper').toggleClass('o-nested');
+		$('.menu-wrapper').removeClass('u-nested');
+		$('.sub-nav-container ul').removeClass('u-opened');
 
 		$('.sub-nav-container ul').each(function() {
 			if ($(this).data('id') == nestedId) {
@@ -123,6 +125,14 @@ $(document).ready(function(){
 		//if ( $('.topbar')[0] ) {
 		//	$('.nested').not(this).removeClass('o-nested').siblings().slideUp('fast');
 		//}
+	});
+
+	// Back button functionality for sub navigation
+	$('.sub-nav-back').on('click', function() {
+		$('.sub-nav-container ul').removeClass('opened');
+		$('.sub-nav-container ul').addClass('u-opened');
+		$('.menu-wrapper, .nested').removeClass('o-nested o-menu-wrapper');
+		$('.menu-wrapper').addClass('u-nested');
 	});
 
 	// End main navigation
