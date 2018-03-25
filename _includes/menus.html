@@ -1,22 +1,53 @@
 {% if menu %}
-<ul>
-  {% for item in site.menus.header %}
-    <li>
+<div class="menu-wrapper">
+  <ul>
+    {% for item in site.menus.header %}
       {% if item.children %}
-      <a href="{{ item.url }}" title="Go to {{ item.title }}" class="nested">{{ item.title }}</a>
+      <li class="nested" data-id="{{ item.identifier }}">
       {% else %}
-      <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
+      <li>
       {% endif %}
-      {% if item.children %}
-        <ul>
-        {% for item in item.children %}
-          <li>
-            <a href="{{ item.url }}" title="Go to {{ item.title }}">{{ item.title }}</a>
-          </li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    </li>
-  {% endfor %}
+        <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">
+          {{ item.title }}
+          {% if item.description %}
+          <div class="menu-description">
+            {{ item.description }}
+          </div>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
   </ul>
+
+  <div class="social">
+      <span class="icon-twitter"></span>
+      <span class="icon-facebook"></span>
+      <span class="icon-dribbble"></span>
+      <span class="icon-g-plus"></span>
+      <span class="icon-github"></span>
+      <span class="icon-instagram"></span>
+  </div>
+</div>
+
+<div class="sub-nav-container">
+  {% for item in site.menus.header %}
+    {% if item.children %}
+      <ul data-id="{{ item.identifier }}">
+        <div class="sub-nav-back">Back</div>
+      {% for item in item.children %}
+        <li>
+            <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title-sub">
+              {{ item.title }}
+              {% if item.description %}
+              <div class="menu-description">
+                {{ item.description }}
+              </div>
+              {% endif %}
+            </a>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+</div>
 {% endif %}

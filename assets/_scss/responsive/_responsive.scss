@@ -20,6 +20,21 @@
 		}
 	}
 
+	#navigation {
+		.nav-container {
+			.menu-right {
+				width: 50%;
+				z-index: 998;
+			}
+			.menu {
+				width: 50%;
+			}
+			.menu:before {
+				opacity: 1;
+			}
+		}
+	}
+
 	.light-container, .dark-container {
 		.intro {
 			max-width: 700px;
@@ -88,29 +103,6 @@
 
 	#navigation {
 		.nav-container {
-			.hamburger {
-				span {
-					width: 10px;
-					height: 3px;
-				}
-				.mid, .o-mid {
-					top: 15px;
-				}
-				.bot, .o-bot {
-					top: 20px;
-				}
-				.u-top {
-					left: 11px;
-				}
-				.u-mid {
-					left: 11px;
-					top: 15px;
-				}
-				.u-bot {
-					left: 11px;
-					top: 20px;
-				}
-			}
 			.ham:before {
 				left: -34px;
 				font-size: 16px;
@@ -120,22 +112,19 @@
 				left: -34px;
 			}
 			.menu {
-				right: -330px;
-				width: 280px;
-				padding: 70px 0 0;
 				li .nested {
 					&:after {
 						content: '';
 					}
 					&:hover {
-						@include transition(all, .1s, ease-in-out);
+						@include transition(all, .3s, ease-in-out);
 						&:after {
 							content: "+";
 							position: absolute;
 							margin: .15em 0 0 1em;
 							font-size: 14px;
 							font-weight: 700;
-							color: $fgLighterBlue;
+							color: lighten($deepForestGreen, 30%);
 						}
 					}
 				}
@@ -185,7 +174,7 @@
 							@include transition(all, 0.2s, ease-in-out);
 							&:hover {
 								background: transparent !important;
-								border-bottom: 4px solid $fgLightBlue;
+								border-bottom: 4px solid $forestGreen;
 							}
 						}
 						.nested {
@@ -232,12 +221,11 @@
 								opacity: 1;
 							}
 							background: transparent !important;
-							border-bottom: 4px solid $fgLightBlue;
+							border-bottom: 4px solid $forestGreen;
 						}
 						ul {
 							position: absolute;
 							top: 62px !important;
-							background: $fgLightBlue;
 							width: 100%;
 							li, li a {
 								background: transparent !important;

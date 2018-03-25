@@ -3,43 +3,66 @@ $(document).ready(function(){
 	////
 	// Main navigation
 
+	let menuCounter = 0;
+
 	// Toggle nav states
 	function navToggle () {
-		$('.top').toggleClass('u-top');
-		$('.mid').toggleClass('u-mid');
-		$('.bot').toggleClass('u-bot');
+		$('.cap').toggleClass('u-cap');
+		$('.top, .bot2, .boter2').toggleClass('u-top');
+		$('.mid, .top2').toggleClass('u-mid');
+		$('.bot, .mid2').toggleClass('u-bot');
+		$('.boter').toggleClass('u-boter');
+		$('.top, .mid, .bot').toggleClass('menu-animate');
 		$('.hamburger').toggleClass('ham opacity');
-		$('.menu').toggleClass('o-menu');
-		$('.menu-overlay').fadeToggle('fast');
+		//$('.menu').toggleClass('o-menu');
+		$('.menu-right').toggleClass('o-menu-right');
+		$('.menu-overlay').fadeToggle('slow');
 		$('.close').hide();
-		$('.nested').removeClass('o-nested').siblings().slideUp('fast');
+		$('.nested').removeClass('o-nested');
+		$('.sub-nav-container ul').removeClass('opened');
+		menuCounter++
+		if (menuCounter > 1) {
+			$(".menu").toggle("blind", {"direction": "right"}, 500);
+			$(".menu-right").toggle("blind", {"direction": "right"}, 500);
+			$('.menu-wrapper').removeClass('o-menu-wrapper');
+			$('.menu-wrapper').toggleClass('u-menu-wrapper');
+			menuCounter = 0;
+		} else {
+			$(".menu").toggle("blind", {"direction": "left"}, 500);
+			$(".menu-right").toggle("blind", {"direction": "left"}, 500);
+			$('.menu-wrapper').removeClass('u-menu-wrapper o-nested');
+			$('.menu-wrapper').toggleClass('o-menu-wrapper');
+		}
 	};
 
 	// Close to default nav state
 	function navClose () {
-		$('.menu').removeClass('o-menu');
-		$('.top').removeClass('u-top');
-		$('.mid').removeClass('u-mid');
-		$('.bot').removeClass('u-bot');
+		//$('.menu').removeClass('o-menu');
+		$('.menu-right').removeClass('o-menu-right');
+		$('.menu-wrapper').removeClass('o-menu-wrapper');
+		$('.menu-wrapper').removeClass('u-menu-wrapper');
+		menuCounter = 0;
+		$(".menu").hide("blind", {"direction": "right"}, 500);
+		$(".menu-right").hide("blind", {"direction": "right"}, 500);
+		$('.cap').removeClass('u-cap');
+		$('.top, .bot2, .boter2').removeClass('u-top');
+		$('.mid, .top2').removeClass('u-mid');
+		$('.bot, .mid2').removeClass('u-bot');
+		$('.boter').removeClass('u-boter');
+		$('.top, .mid, .bot').addClass('menu-animate');
 		$('.hamburger').removeClass('opacity').addClass('ham');
-		$('.menu-overlay').fadeOut('fast');
+		$('.menu-overlay').fadeOut('slow');
 		$('.close').hide();
-		$('.nested').removeClass('o-nested').siblings().slideUp('fast');
+		$('.nested').removeClass('o-nested');
+		$('.menu-wrapper').removeClass('o-menu-wrapper o-nested');
+		$('.menu-wrapper').addClass('u-menu-wrapper');
+		$('.sub-nav-container ul').removeClass('opened');
 	}
 
 	// Hamburger icon click state
 	$('.hamburger').on('click', function() {
 		navToggle();
-		collisionCheck($('.hamburger span, .ham'), $('.light-container'), 'o-white');
-	});
-
-	// If menu is open, show close tooltip on hamburger hover
-	$('.hamburger').hover(function() {
-		if ($('.menu').hasClass('o-menu')) {
-			$('.close').fadeIn('fast');
-		}
-	}, function() {
-		$('.close').fadeOut('fast');
+		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
 	});
 
 	// Check for DIV collision
@@ -73,7 +96,7 @@ $(document).ready(function(){
 	// Do things on scroll
 	$(document).on('scroll', function() {
 		navClose();
-		collisionCheck($('.hamburger span, .ham'), $('.light-container'), 'o-white');
+		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
 		collisionCheck($('.headline'), $('.headline-pos-anchor'), 'headline-pos-change', true);
 		collisionCheck($('.headline'), $('.headline-color-anchor'), 'headline-color-change', true);
 	});
@@ -81,16 +104,25 @@ $(document).ready(function(){
 	// Do things on overlay click
 	$('.menu-overlay').on('click', function() {
 		navClose();
-		collisionCheck($('.hamburger span, .ham'), $('.light-container'), 'o-white');
+		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
 	});
 
 	// Show nested nav items when a parent is clicked
 	$('.nested').on('click', function(e) {
+		const nestedId = $(this).data('id');
+
 		e.preventDefault();
-		$(this).toggleClass('o-nested').siblings(':first').slideToggle('fast');
-		if ( $('.topbar')[0] ) {
-			$('.nested').not(this).removeClass('o-nested').siblings().slideUp('fast');
-		}
+		$('.menu-wrapper').toggleClass('o-nested');
+
+		$('.sub-nav-container ul').each(function() {
+			if ($(this).data('id') == nestedId) {
+				$(this).addClass('opened');
+			}
+		});
+		//$(this).removeClass('o-nested').siblings(':first').slideToggle('fast');
+		//if ( $('.topbar')[0] ) {
+		//	$('.nested').not(this).removeClass('o-nested').siblings().slideUp('fast');
+		//}
 	});
 
 	// End main navigation
