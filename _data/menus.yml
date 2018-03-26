@@ -1,4 +1,8 @@
 ---
+nav2:
+- url: "/"
+  weight: 1
+  title: Nested nav option 2
 header:
 - identifier: nav3
   url: javascript:void(0)
