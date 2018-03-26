@@ -1,8 +1,14 @@
 ---
 nav2:
 - url: "/"
-  weight: 1
+  weight: 2
   title: Nested nav option 2
+  description: testing descriptions
+- identifier: _index
+  url: "/nested-1"
+  weight: 1
+  description: testing descriptions
+  title: Nested nav option 1
 header:
 - identifier: nav3
   url: javascript:void(0)
