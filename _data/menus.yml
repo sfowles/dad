@@ -9,16 +9,16 @@ Landscapes:
   weight: 1
   title: Nested landscape option 1
 header:
-- identifier: nav3
-  url: javascript:void(0)
-  weight: 2
-  description: Custom pools designed by Brad
-  title: Custom Pool Design
 - identifier: Landscapes
   url: javascript:void(0)
   weight: 3
   description: Custom landscapes designed by Brad
   title: Custom Landscape Architecture
+- identifier: nav3
+  url: javascript:void(0)
+  weight: 2
+  description: Custom pools designed by Brad
+  title: Custom Pool Design
 - identifier: nav1
   url: "/option-1"
   weight: 1
