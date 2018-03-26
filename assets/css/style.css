@@ -235,7 +235,7 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu:before { position: absolute; top: 0; left: 0; display: block; background: #000f09; opacity: 0.8; width: 100%; height: 100%; content: ''; }
 
-#navigation .nav-container .menu .menu-title { font-size: 18px; text-transform: uppercase; letter-spacing: 1px; color: #fff; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+#navigation .nav-container .menu .menu-title { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: #fff; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
 #navigation .nav-container .menu .menu-description { margin-top: 16px; font-weight: 400; font-size: 12px; opacity: 0.5; font-family: 'Roboto', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
 
@@ -253,15 +253,21 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .u-nested { animation: subnav2 .3s linear; }
 
-#navigation .nav-container .menu .sub-nav-back { width: 0; overflow: hidden; position: absolute; top: -180px; left: 30px; cursor: pointer; }
+#navigation .nav-container .menu .sub-nav-back { width: 0; overflow: hidden; position: absolute; top: -210px; left: 50px; opacity: 0.5; cursor: pointer; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
-#navigation .nav-container .menu .opened .sub-nav-back { animation: blind .8s 1 linear; animation-fill-mode: forwards; }
+#navigation .nav-container .menu .sub-nav-back:hover { opacity: 1; }
+
+#navigation .nav-container .menu .sub-nav-back:hover > .greenarrow { margin-right: 5px; margin-left: 15px; }
+
+#navigation .nav-container .menu .opened .sub-nav-back { animation: blind .7s 1 linear; animation-fill-mode: forwards; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
+
+#navigation .nav-container .menu .greenarrow { color: #00b76e; margin-right: 20px; font-size: 30px; top: 6px; position: relative; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
 #navigation .nav-container .menu .menu-wrapper, #navigation .nav-container .menu .sub-nav-container ul { position: absolute; }
 
 #navigation .nav-container .menu ul { list-style: none; text-indent: none; margin: 150px 0 0; padding: 0; }
 
-#navigation .nav-container .menu li a { display: block; padding: 15px 0 15px 200px; text-align: left; opacity: 0.6; font-weight: 400; text-decoration: none; }
+#navigation .nav-container .menu li a { display: block; padding: 20px 0 20px 200px; text-align: left; opacity: 0.6; font-weight: 400; text-decoration: none; }
 
 #navigation .nav-container .menu li a:hover { opacity: 1; }
 
@@ -271,7 +277,7 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu li ul li a:hover { opacity: 1; }
 
-#navigation .nav-container .menu li .nested:after { content: "+"; position: absolute; margin: .15em 0 0 1em; font-size: 14px; font-weight: 700; color: #00b76e; }
+#navigation .nav-container .menu .nested .menu-title:after { content: "→"; position: absolute; margin: -1.4em 0 0 15em; font-size: 30px; font-weight: 700; color: #00b76e; }
 
 #navigation .nav-container .menu .social { margin: 0 0 10em 12.5em; padding: 1em 0; text-align: left; cursor: pointer; }
 
