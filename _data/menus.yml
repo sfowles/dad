@@ -1,27 +1,28 @@
 ---
 nav2:
-- url: "/"
-  weight: 2
-  title: Nested nav option 2
-  description: testing descriptions
 - identifier: _index
   url: "/nested-1"
   weight: 1
   description: testing descriptions
   title: Nested nav option 1
+- identifier: 
+  url: "/"
+  weight: 2
+  description: testing descriptions
+  title: Nested nav option 2
 header:
 - identifier: nav3
   url: javascript:void(0)
-  weight: 1
+  weight: 2
   description: Custom pools designed by Brad
   title: Custom Pool Design
 - identifier: nav2
   url: javascript:void(0)
-  weight: 2
+  weight: 3
   description: Custom landscapes designed by Brad
   title: Custom Landscape Architecture
 - identifier: nav1
   url: "/option-1"
-  weight: 3
+  weight: 1
   description: Hand-painted scenes of beaches, vineyards, and more
   title: Scenes &amp; Paintings
