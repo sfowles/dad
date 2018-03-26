@@ -1,20 +1,20 @@
 ---
-nav2:
+Landscapes:
 - identifier: nest2
   url: "/"
   weight: 2
-  title: Nested nav option 2
+  title: Nested landscape option 2
 - identifier: nest1
-  url: "/nested-1"
+  url: "/"
   weight: 1
-  title: Nested nav option 1
+  title: Nested landscape option 1
 header:
 - identifier: nav3
   url: javascript:void(0)
   weight: 2
   description: Custom pools designed by Brad
   title: Custom Pool Design
-- identifier: nav2
+- identifier: Landscapes
   url: javascript:void(0)
   weight: 3
   description: Custom landscapes designed by Brad
