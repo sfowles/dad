@@ -1,6 +1,6 @@
 port: 7776
 markdown: kramdown
-plugins_dir:
+plugins:
   - jekyll-menus
 exclude:
   - Gemfile
@@ -11,5 +11,4 @@ baseurl: /dad
 sass:
   load_paths:
     - assets/_scss
-    - node_modules
   style: compressed
