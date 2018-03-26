@@ -1,0 +1,14 @@
+port: 7776
+markdown: kramdown
+plugins:
+  - jekyll-menus
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - gulpfile.js
+baseurl: /dad
+sass:
+  load_paths:
+    - assets/_scss
+  style: compressed
