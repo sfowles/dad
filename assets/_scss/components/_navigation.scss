@@ -152,7 +152,7 @@
 				content: '';
 			}
 			.menu-title {
-				font-size: 18px;
+				font-size: 16px;
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				color: $white;
@@ -207,13 +207,35 @@
 				width: 0;
 				overflow: hidden;
 				position: absolute;
-				top: -180px;
-				left: 30px;
+				top: -210px;
+				left: 50px;
+				opacity: 0.5;
 				cursor: pointer;
+				@include transition(all, .2s, ease-in-out);
+
+				&:hover {
+					opacity: 1;
+				}
+
+				&:hover > .greenarrow {
+					margin-right:5px;
+					margin-left:15px;
+				}
 			}
 			.opened .sub-nav-back {
-				animation: blind .8s 1 linear;
+				animation: blind .7s 1 linear;
 				animation-fill-mode: forwards;
+				text-transform: uppercase;
+				font-size: 12px;
+				letter-spacing: 1px;
+			}
+			.greenarrow {
+				color: #00b76e;
+				margin-right: 20px;
+				font-size: 30px;
+				top: 6px;
+				position: relative;
+				@include transition(all, .2s, ease-in-out);
 			}
 			.menu-wrapper,
 			.sub-nav-container ul {
@@ -228,7 +250,7 @@
 			li {
 				a {
 					display: block;
-					padding: 15px 0 15px 200px;
+					padding: 20px 0 20px 200px;
 					text-align: left;
 					opacity: 0.6;
 					font-weight: 400;
@@ -256,15 +278,15 @@
 						}
 					}
 				}
-				.nested {
-					&:after {
-						content: "+";
-						position: absolute;
-						margin: .15em 0 0 1em;
-						font-size: 14px;
-						font-weight: 700;
-						color: lighten($deepForestGreen, 30%);
-					}
+			}
+			.nested .menu-title {
+				&:after {
+					content: "→";
+					position: absolute;
+					margin: -1.4em 0 0 15em;
+					font-size: 30px;
+					font-weight: 700;
+					color: lighten($deepForestGreen, 30%);
 				}
 			}
 			.social {

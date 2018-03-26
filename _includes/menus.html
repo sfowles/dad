@@ -33,7 +33,7 @@
   {% for item in site.menus.header %}
     {% if item.children %}
       <ul data-id="{{ item.identifier }}">
-        <div class="sub-nav-back">Back</div>
+        <div class="sub-nav-back"><span class="greenarrow">←</span>Back</div>
       {% for item in item.children %}
         <li>
             <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">
