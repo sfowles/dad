@@ -1,4 +1,15 @@
 ---
+nav2:
+- identifier: nest2
+  url: "/"
+  weight: 2
+  description: testing descriptions
+  title: Nested nav option 2
+- identifier: nest1
+  url: "/nested-1"
+  weight: 1
+  description: testing descriptions
+  title: Nested nav option 1
 header:
 - identifier: nav3
   url: javascript:void(0)
@@ -15,14 +26,3 @@ header:
   weight: 1
   description: Hand-painted scenes of beaches, vineyards, and more
   title: Scenes &amp; Paintings
-nav2:
-- identifier: nest1
-  url: "/nested-1"
-  weight: 1
-  description: testing descriptions
-  title: Nested nav option 1
-- identifier: nest2
-  url: "/"
-  weight: 2
-  description: testing descriptions
-  title: Nested nav option 2
