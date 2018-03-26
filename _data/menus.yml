@@ -2,13 +2,13 @@
 header:
 - identifier: nav1
   url: "/option-1"
-  title: Nav option 1
-  description: testing descriptions
+  title: Scenes &amp; Paintings
+  description: Hand-painted scenes of beaches, vineyards, and more
 - identifier: nav2
   url: "javascript:void(0)"
-  title: Nav option 2
-  description: testing descriptions
+  title: Custom Landscape Architecture
+  description: Custom landscapes designed by Brad
 - identifier: nav3
   url: "javascript:void(0)"
-  title: Nav option 3
-  description: testing descriptions
+  title: Custom Pool Design
+  description: Custom pools designed by Brad
