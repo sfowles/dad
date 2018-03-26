@@ -8,6 +8,13 @@
       <li>
       {% endif %}
         <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">
+            {% if item.children %}
+              <div class="greenarrow-big">
+                  <svg id="Layer_1" viewBox="0 0 692 377.45">
+                    <path d="M721,190,532.27,1.27V111.36H29V268.64H532.27V378.73Z" transform="translate(-29 -1.27)"/>
+                  </svg>
+              </div>
+            {% endif %}
           {{ item.title }}
           {% if item.description %}
           <div class="menu-description">
@@ -33,7 +40,13 @@
   {% for item in site.menus.header %}
     {% if item.children %}
       <ul data-id="{{ item.identifier }}">
-        <div class="sub-nav-back"><span class="greenarrow">←</span>Back</div>
+        <div class="sub-nav-back">
+          <span class="greenarrow">
+            <svg id="Layer_1" viewBox="0 0 692 377.45">
+              <path d="M29,190,217.73,1.27V111.36H721V268.64H217.73V378.73Z" transform="translate(-29 -1.27)"/>
+            </svg>
+          </span>Back
+        </div>
       {% for item in item.children %}
         <li>
             <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">

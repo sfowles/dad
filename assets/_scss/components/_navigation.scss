@@ -152,6 +152,7 @@
 				content: '';
 			}
 			.menu-title {
+				position: relative;
 				font-size: 16px;
 				text-transform: uppercase;
 				letter-spacing: 1px;
@@ -169,7 +170,7 @@
 			}
 			.sub-nav-container {
 				position: absolute;
-				top: 70px;
+				top: 80px;
 				left: 0;
 				width: 100%;
 			}
@@ -208,7 +209,9 @@
 				overflow: hidden;
 				position: absolute;
 				top: -210px;
-				left: 50px;
+				left: 40px;
+				padding-left: 60px;
+				padding-top: 5px;
 				opacity: 0.5;
 				cursor: pointer;
 				@include transition(all, .2s, ease-in-out);
@@ -231,11 +234,21 @@
 			}
 			.greenarrow {
 				color: #00b76e;
-				margin-right: 20px;
+				left: 0;
 				font-size: 30px;
 				top: 6px;
-				position: relative;
+				position: absolute;
 				@include transition(all, .2s, ease-in-out);
+
+				svg {
+					width: 30px;
+					top: -2px;
+					position: relative;
+				}
+
+				svg path {
+					fill: lighten($deepForestGreen, 30%);
+				}
 			}
 			.menu-wrapper,
 			.sub-nav-container ul {
@@ -279,14 +292,14 @@
 					}
 				}
 			}
-			.nested .menu-title {
-				&:after {
-					content: "→";
-					position: absolute;
-					margin: -1.4em 0 0 15em;
-					font-size: 30px;
-					font-weight: 700;
-					color: lighten($deepForestGreen, 30%);
+			.greenarrow-big {
+				width: 30px;
+				position: absolute;
+				right: -6em;
+				top: 2.5em;
+
+				svg path {
+					fill: lighten($deepForestGreen, 30%);
 				}
 			}
 			.social {
@@ -431,6 +444,6 @@
 		width: 0;
 	}
 	100% {
-		width: 100px;
+		width: 150px;
 	}
 }
