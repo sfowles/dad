@@ -176,6 +176,11 @@
 			}
 			.sub-nav-container ul {
 				display: none;
+				width: 100%;
+			}
+			.sub-nav-container ul li {
+				width: 50%;
+				margin: 0 auto;
 			}
 			.sub-nav-container ul.opened,
 			.u-nested {
@@ -254,16 +259,20 @@
 			.sub-nav-container ul {
 				position: absolute;
 			}
+			.menu-wrapper {
+				width: 100%;
+			}
 			ul {
 				list-style: none;
 				text-indent: none;
-				margin: 150px 0 0;
+				margin: 150px auto 0;
+				width: 50%;
 				padding: 0;
 			}
 			li {
 				a {
 					display: block;
-					padding: 20px 0 20px 200px;
+					padding: 20px 0;
 					text-align: left;
 					opacity: 0.6;
 					font-weight: 400;
@@ -303,7 +312,8 @@
 				}
 			}
 			.social {
-				margin: 0 0 10em 12.5em;
+				margin: 0 auto 10em;
+				width: 50%;
 				padding: 1em 0;
 				text-align: left;
 				cursor: pointer;
