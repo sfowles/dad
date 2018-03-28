@@ -241,7 +241,9 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .sub-nav-container { position: absolute; top: 80px; left: 0; width: 100%; }
 
-#navigation .nav-container .menu .sub-nav-container ul { display: none; }
+#navigation .nav-container .menu .sub-nav-container ul { display: none; width: 100%; }
+
+#navigation .nav-container .menu .sub-nav-container ul li { width: 50%; margin: 0 auto; }
 
 #navigation .nav-container .menu .sub-nav-container ul.opened, #navigation .nav-container .menu .u-nested { display: block; animation: subnav .3s 1 linear; animation-fill-mode: forwards; }
 
@@ -269,9 +271,11 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .menu-wrapper, #navigation .nav-container .menu .sub-nav-container ul { position: absolute; }
 
-#navigation .nav-container .menu ul { list-style: none; text-indent: none; margin: 150px 0 0; padding: 0; }
+#navigation .nav-container .menu .menu-wrapper { width: 100%; }
 
-#navigation .nav-container .menu li a { display: block; padding: 20px 0 20px 200px; text-align: left; opacity: 0.6; font-weight: 400; text-decoration: none; }
+#navigation .nav-container .menu ul { list-style: none; text-indent: none; margin: 150px auto 0; width: 50%; padding: 0; }
+
+#navigation .nav-container .menu li a { display: block; padding: 20px 0; text-align: left; opacity: 0.6; font-weight: 400; text-decoration: none; }
 
 #navigation .nav-container .menu li a:hover { opacity: 1; }
 
@@ -285,7 +289,7 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .greenarrow-big svg path { fill: #00b76e; }
 
-#navigation .nav-container .menu .social { margin: 0 0 10em 12.5em; padding: 1em 0; text-align: left; cursor: pointer; }
+#navigation .nav-container .menu .social { margin: 0 auto 10em; width: 50%; padding: 1em 0; text-align: left; cursor: pointer; }
 
 #navigation .nav-container .menu .social span { display: inline-block; width: 25px; opacity: 0.6; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
