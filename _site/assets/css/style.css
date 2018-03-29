@@ -14,6 +14,8 @@ h1, h2 { font-size: 40px; }
 
 h2, h3 { font-size: em(30, 19); }
 
+h3 { font-size: 24px; }
+
 h4 { font-weight: bold; }
 
 select, textarea { background: #fff; border: none; border-radius: 5px; font-size: 1em; padding: .8em 1em .7em; }
@@ -674,6 +676,10 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 .gallery ul li .options .icon-comments:hover { opacity: 1; color: #fff; }
 
 .gallery ul li .options .icon-comments:before { position: relative; margin: 0.6em 0.2em 0.2em; content: ""; font-family: "dh-icons"; font-size: 12px; }
+
+.gallery { margin: 0 auto; width: 70%; }
+
+.gallery-image { width: 100%; margin: 0 auto 10rem; }
 
 .form { max-width: 1000px; text-align: center; margin: 0 auto; }
 
