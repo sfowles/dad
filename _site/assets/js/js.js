@@ -32,6 +32,9 @@ $(document).ready(function(){
 			$(".menu-right").toggle("blind", {"direction": "left"}, 500);
 			$('.menu-wrapper').removeClass('u-menu-wrapper o-nested u-nested');
 			$('.menu-wrapper').toggleClass('o-menu-wrapper');
+			$('.menu-wrapper ul').removeClass('ul-blinds ul-blinds-close');
+			$('.sub-nav-container ul').removeClass('ul-blinds');
+			$('.sub-nav-container ul').addClass('ul-blinds-close');
 		}
 	};
 
