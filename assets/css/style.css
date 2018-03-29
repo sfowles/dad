@@ -227,9 +227,7 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu-right { position: fixed; display: none; background: #2c2c2c; color: #fff; bottom: 0; left: 0; height: 100%; width: 100%; z-index: 997; overflow: hidden; }
 
-#navigation .nav-container .menu-right img { height: 100%; }
-
-#navigation .nav-container .menu-right.o-menu-right img { animation: menuimage 2s 1 linear; animation-fill-mode: forwards; }
+#navigation .nav-container .menu-right img { height: 100%; opacity: 0; position: absolute; top: 0; }
 
 #navigation .nav-container .menu { position: fixed; display: none; color: #fff; top: 0; right: 0; height: 100%; width: 100%; z-index: 998; overflow-y: auto; overflow-x: hidden; padding: 70px 0 0; }
 
@@ -311,11 +309,13 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 .logo:hover { opacity: 1; }
 
+.animate-in { opacity: 1; animation: menuimage 2s 1 linear; animation-fill-mode: forwards; }
+
 @keyframes menuimage { 0% { height: 104%;
     margin-left: -2%;
     margin-top: -2%;
     opacity: 0; }
-  50% { height: 100%;
+  50%, 100% { height: 100%;
     margin-top: 0;
     margin-left: 0;
     opacity: 1; } }
@@ -689,10 +689,10 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
   #navigation .nav-container .menu ul:before, #navigation .nav-container .menu ul:after { content: ''; display: block; right: auto; width: 0; height: 100%; position: absolute; z-index: 999; top: 0; background: #000f09; }
   #navigation .nav-container .menu ul:before { left: -10%; }
   #navigation .nav-container .menu ul:after { left: 50%; }
-  #navigation .nav-container .menu .ul-blinds:before, #navigation .nav-container .menu .ul-blinds:after { right: auto; animation: ulblinds .6s 1 linear; animation-fill-mode: forwards; }
+  #navigation .nav-container .menu .ul-blinds:before, #navigation .nav-container .menu .ul-blinds:after { right: auto; animation: ulblinds .6s ease-in-out; animation-fill-mode: forwards; }
   #navigation .nav-container .menu .ul-blinds:before { left: auto; right: 0; }
   #navigation .nav-container .menu .ul-blinds:after { right: 50%; left: auto; }
-  #navigation .nav-container .menu .ul-blinds-close:before, #navigation .nav-container .menu .ul-blinds-close:after { animation: ulblindsclose .6s 1 linear; animation-fill-mode: forwards; }
+  #navigation .nav-container .menu .ul-blinds-close:before, #navigation .nav-container .menu .ul-blinds-close:after { animation: ulblindsclose .6s ease-in-out; animation-fill-mode: forwards; }
   #navigation .nav-container .menu .ul-blinds:before { left: auto; right: 0; }
   #navigation .nav-container .menu .ul-blinds:after { right: 50%; left: auto; }
   #navigation .nav-container .menu:before { opacity: 1; }
