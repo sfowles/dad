@@ -7,11 +7,9 @@ $(document).ready(function(){
 
 	// Toggle nav states
 	function navToggle () {
-		$('.cap').toggleClass('u-cap');
-		$('.top, .bot2, .boter2').toggleClass('u-top');
-		$('.mid, .top2').toggleClass('u-mid');
-		$('.bot, .mid2').toggleClass('u-bot');
-		$('.boter').toggleClass('u-boter');
+		$('.top').toggleClass('u-top');
+		$('.mid').toggleClass('u-mid');
+		$('.bot').toggleClass('u-bot');
 		$('.top, .mid, .bot').toggleClass('menu-animate');
 		$('.hamburger').toggleClass('ham opacity');
 		//$('.menu').toggleClass('o-menu');
@@ -35,6 +33,8 @@ $(document).ready(function(){
 			$('.menu-wrapper ul').removeClass('ul-blinds ul-blinds-close');
 			$('.sub-nav-container ul').removeClass('ul-blinds');
 			$('.sub-nav-container ul').addClass('ul-blinds-close');
+			$('.menu-right img').removeClass('animate-in');
+			$(shuffle($('.menu-right img')).slice(0, 1)).addClass('animate-in');
 		}
 	};
 
@@ -47,11 +47,9 @@ $(document).ready(function(){
 		menuCounter = 0;
 		$(".menu").hide("blind", {"direction": "right"}, 500);
 		$(".menu-right").hide("blind", {"direction": "right"}, 500);
-		$('.cap').removeClass('u-cap');
-		$('.top, .bot2, .boter2').removeClass('u-top');
-		$('.mid, .top2').removeClass('u-mid');
-		$('.bot, .mid2').removeClass('u-bot');
-		$('.boter').removeClass('u-boter');
+		$('.top').removeClass('u-top');
+		$('.mid').removeClass('u-mid');
+		$('.bot').removeClass('u-bot');
 		$('.top, .mid, .bot').addClass('menu-animate');
 		$('.hamburger').removeClass('opacity').addClass('ham');
 		$('.menu-overlay').fadeOut('slow');
@@ -69,6 +67,25 @@ $(document).ready(function(){
 		navToggle();
 		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
 	});
+
+	// Do the Fisher-Yates shuffle
+	function shuffle(array) {
+		var m = array.length, t, i;
+
+		// While there remain elements to shuffle…
+		while (m) {
+
+			// Pick a remaining element…
+			i = Math.floor(Math.random() * m--);
+
+			// And swap it with the current element.
+			t = array[m];
+			array[m] = array[i];
+			array[i] = t;
+		}
+
+		return array;
+	}
 
 	// Check for DIV collision
 	function collisionCheck($div1, $div2, color, topOnly) {
@@ -124,6 +141,18 @@ $(document).ready(function(){
 		$('.sub-nav-container ul').each(function() {
 			if ($(this).data('id') == nestedId) {
 				$(this).addClass('ul-blinds');
+			}
+		});
+	});
+
+	// Show different navigation images on hover
+	$('.menu-item').on('mouseover', function() {
+		const nestedId = $(this).data('id');
+
+		$('.menu-right img').removeClass('animate-in');
+		$('.menu-right img').each(function() {
+			if ($(this).data('id') == nestedId) {
+				$(this).addClass('animate-in');
 			}
 		});
 	});

@@ -1,65 +1,72 @@
 {% if menu %}
-<div class="menu-wrapper">
-  <ul>
-    {% for item in site.menus.header %}
-      {% if item.children %}
-      <li class="nested" data-id="{{ item.identifier }}">
-      {% else %}
-      <li>
-      {% endif %}
-        <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">
-            {% if item.children %}
-              <div class="greenarrow-big">
-                  <svg id="Layer_1" viewBox="0 0 692 377.45">
-                    <path d="M721,190,532.27,1.27V111.36H29V268.64H532.27V378.73Z" transform="translate(-29 -1.27)"/>
-                  </svg>
-              </div>
-            {% endif %}
-          {{ item.title }}
-          {% if item.description %}
-          <div class="menu-description">
-            {{ item.description }}
-          </div>
-          {% endif %}
-        </a>
-      </li>
-    {% endfor %}
-    <div class="social">
-      <span class="icon-twitter"></span>
-      <span class="icon-facebook"></span>
-      <span class="icon-dribbble"></span>
-      <span class="icon-g-plus"></span>
-      <span class="icon-github"></span>
-      <span class="icon-instagram"></span>
-    </div>
-  </ul>
-</div>
-
-<div class="sub-nav-container">
-  {% for item in site.menus.header %}
-    {% if item.children %}
-      <ul data-id="{{ item.identifier }}" class="ul-blinds-close">
-        <div class="sub-nav-back">
-          <span class="greenarrow">
-            <svg id="Layer_1" viewBox="0 0 692 377.45">
-              <path d="M29,190,217.73,1.27V111.36H721V268.64H217.73V378.73Z" transform="translate(-29 -1.27)"/>
-            </svg>
-          </span>
-        </div>
-      {% for item in item.children %}
-        <li>
-            <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">
-              {{ item.title }}
-              {% if item.description %}
-              <div class="menu-description">
-                {{ item.description }}
-              </div>
+<div class="menu">
+  <div class="menu-wrapper">
+    <ul>
+      {% for item in site.menus.header %}
+        {% if item.children %}
+        <li class="menu-item nested" data-id="{{ item.identifier }}">
+        {% else %}
+        <li class="menu-item" data-id="{{ item.identifier }}">
+        {% endif %}
+          <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">
+              {% if item.children %}
+                <div class="greenarrow-big">
+                    <svg id="Layer_1" viewBox="0 0 692 377.45">
+                      <path d="M721,190,532.27,1.27V111.36H29V268.64H532.27V378.73Z" transform="translate(-29 -1.27)"/>
+                    </svg>
+                </div>
               {% endif %}
-            </a>
+            {{ item.title }}
+            {% if item.description %}
+            <div class="menu-description">
+              {{ item.description }}
+            </div>
+            {% endif %}
+          </a>
         </li>
       {% endfor %}
-      </ul>
-    {% endif %}
+      <div class="social">
+        <span class="icon-twitter"></span>
+        <span class="icon-facebook"></span>
+        <span class="icon-dribbble"></span>
+        <span class="icon-g-plus"></span>
+        <span class="icon-github"></span>
+        <span class="icon-instagram"></span>
+      </div>
+    </ul>
+  </div>
+
+  <div class="sub-nav-container">
+    {% for item in site.menus.header %}
+      {% if item.children %}
+        <ul data-id="{{ item.identifier }}" class="ul-blinds-close">
+          <div class="sub-nav-back">
+            <span class="greenarrow">
+              <svg id="Layer_1" viewBox="0 0 692 377.45">
+                <path d="M29,190,217.73,1.27V111.36H721V268.64H217.73V378.73Z" transform="translate(-29 -1.27)"/>
+              </svg>
+            </span>
+          </div>
+        {% for item in item.children %}
+          <li>
+              <a href="{{ item.url }}" title="Go to {{ item.title }}" class="menu-title">
+                {{ item.title }}
+                {% if item.description %}
+                <div class="menu-description">
+                  {{ item.description }}
+                </div>
+                {% endif %}
+              </a>
+          </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+<div class="menu-right">
+  {% for item in site.menus.header %}
+    <img src="{{ site.baseurl }}assets/img/hero-{{ item.identifier }}.jpg" data-id="{{ item.identifier }}" />
   {% endfor %}
 </div>
 {% endif %}

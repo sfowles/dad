@@ -120,11 +120,9 @@
 
 			img {
 				height: 100%;
-			}
-
-			&.o-menu-right img {
-				animation: menuimage 2s 1 linear;
-				animation-fill-mode: forwards;
+				opacity: 0;
+				position: absolute;
+				top: 0;
 			}
 		}
 		.menu {
@@ -379,6 +377,11 @@
 		opacity: 1;
 	}
 }
+.animate-in {
+	opacity: 1;
+	animation: menuimage 2s 1 linear;
+	animation-fill-mode: forwards;
+}
 
 @keyframes menuimage {
 	0% {
@@ -387,7 +390,7 @@
 		margin-top: -2%;
 		opacity: 0;
 	}
-	50% {
+	50%, 100% {
 		height: 100%;
 		margin-top: 0;
 		margin-left: 0;

@@ -54,7 +54,7 @@
 				.ul-blinds:before,
 				.ul-blinds:after {
 					right: auto;
-					animation: ulblinds .6s 1 linear;
+					animation: ulblinds .6s ease-in-out;
 					animation-fill-mode: forwards;
 				}
 				.ul-blinds:before {
@@ -67,7 +67,7 @@
 				}
 				.ul-blinds-close:before,
 				.ul-blinds-close:after {
-					animation: ulblindsclose .6s 1 linear;
+					animation: ulblindsclose .6s ease-in-out;
 					animation-fill-mode: forwards;
 				}
 				.ul-blinds:before {

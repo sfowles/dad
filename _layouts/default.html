@@ -28,13 +28,8 @@
                         <span class="bot"></span>
                     </div>
                 </div>
-                <div class="menu">
-                    {% assign menu = site.menus.header %}
-                    {% include menus.html %}
-                </div>
-                <div class="menu-right">
-                    <img src="{{ site.baseurl }}assets/img/hero-lg.jpg" />
-                </div>
+                {% assign menu = site.menus.header %}
+                {% include menus.html %}
             </div>
         </nav>
     </body>
