@@ -239,13 +239,13 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .menu-description { margin-top: 16px; font-weight: 400; font-size: 12px; opacity: 0.5; font-family: 'Roboto', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
 
-#navigation .nav-container .menu .sub-nav-container { position: absolute; top: 80px; left: 0; width: 100%; }
+#navigation .nav-container .menu .sub-nav-container { position: absolute; display: block; width: 100%; }
 
-#navigation .nav-container .menu .sub-nav-container ul { display: none; width: 100%; }
+#navigation .nav-container .menu .sub-nav-container ul:before, #navigation .nav-container .menu .sub-nav-container ul:after { width: 50%; }
 
-#navigation .nav-container .menu .sub-nav-container ul li { width: 50%; margin: 0 auto; }
+#navigation .nav-container .menu .sub-nav-container ul.opened { display: block; }
 
-#navigation .nav-container .menu .sub-nav-container ul.opened, #navigation .nav-container .menu .u-nested { display: block; animation: subnav .3s 1 linear; animation-fill-mode: forwards; }
+#navigation .nav-container .menu .sub-nav-container ul.opened:before, #navigation .nav-container .menu .sub-nav-container ul.opened:after { animation: ulblindsclose .3s linear; animation-fill-mode: forwards; }
 
 #navigation .nav-container .menu .o-nested, #navigation .nav-container .menu .sub-nav-container ul.u-opened { animation: nested .2s 1 linear; animation-fill-mode: forwards; padding-right: 70px; color: #fff; opacity: 1; }
 
@@ -253,7 +253,11 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .sub-nav-container ul.u-opened { animation: nested2 .2s linear; }
 
-#navigation .nav-container .menu .u-nested { animation: subnav2 .3s linear; }
+#navigation .nav-container .menu .u-nested:before, #navigation .nav-container .menu .u-nested:after { animation: ulblindsclose .3s linear; left: auto; }
+
+#navigation .nav-container .menu .u-nested:before { right: 50%; }
+
+#navigation .nav-container .menu .u-nested:after { right: 0; }
 
 #navigation .nav-container .menu .sub-nav-back { width: 0; overflow: hidden; position: absolute; top: -210px; left: 40px; padding-left: 60px; padding-top: 5px; opacity: 0.5; cursor: pointer; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
@@ -269,15 +273,19 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .greenarrow svg path { fill: #00b76e; }
 
-#navigation .nav-container .menu .menu-wrapper, #navigation .nav-container .menu .sub-nav-container ul { position: absolute; }
+#navigation .nav-container .menu .menu-wrapper, #navigation .nav-container .menu .sub-nav-container ul { position: absolute; left: 0; right: 0; }
 
 #navigation .nav-container .menu .menu-wrapper { width: 100%; }
 
-#navigation .nav-container .menu ul { list-style: none; text-indent: none; margin: 150px auto 0; width: 50%; padding: 0; }
+#navigation .nav-container .menu ul { list-style: none; text-indent: none; margin: 150px auto 0; width: 50%; padding: 0; position: relative; }
+
+#navigation .nav-container .menu .ul-blinds { animation: ulblindscontainer .6s 1 linear; animation-fill-mode: forwards; z-index: 999; }
+
+#navigation .nav-container .menu .ul-blinds-close { right: auto; z-index: 998; animation: ulblindsclosecontainer .6s 1 linear; animation-fill-mode: forwards; }
 
 #navigation .nav-container .menu li a { display: block; padding: 20px 0; text-align: left; opacity: 0.6; font-weight: 400; text-decoration: none; }
 
-#navigation .nav-container .menu li a:hover { opacity: 1; }
+#navigation .nav-container .menu li a:hover { opacity: 1; transform: scale(1.02); }
 
 #navigation .nav-container .menu li ul { display: none; margin-top: 0; }
 
@@ -289,7 +297,7 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .greenarrow-big svg path { fill: #00b76e; }
 
-#navigation .nav-container .menu .social { margin: 0 auto 10em; width: 50%; padding: 1em 0; text-align: left; cursor: pointer; }
+#navigation .nav-container .menu .social { width: 50%; padding: 1em 0; text-align: left; cursor: pointer; }
 
 #navigation .nav-container .menu .social span { display: inline-block; width: 25px; opacity: 0.6; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
@@ -322,34 +330,24 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
   30%, 100% { margin-top: -30px;
     opacity: 0; } }
 
-@keyframes nested { 0% { opacity: 1;
-    margin-top: 0;
-    left: 0; }
-  99% { opacity: 0;
-    margin-top: 0;
-    left: -100px; }
-  100% { margin-top: -9999px; } }
-
-@keyframes subnav2 { 0% { opacity: 0;
-    left: -100px; }
-  100% { opacity: 1;
-    left: 0; } }
-
-@keyframes nested2 { 0% { opacity: 1;
-    margin-top: 0;
-    left: -100px; }
-  99% { opacity: 0;
-    margin-top: 0;
-    left: 0; }
-  100% { margin-top: -9999px; } }
-
-@keyframes subnav { 0% { opacity: 0;
-    left: 100px; }
-  100% { opacity: 1;
-    left: 0; } }
-
 @keyframes blind { 0%, 40% { width: 0; }
   100% { width: 150px; } }
+
+@keyframes ulblindsclose { 0% { width: 0; }
+  50%, 100% { width: 50%; } }
+
+@keyframes ulblindsclosecontainer { 0% { display: block; }
+  50%, 100% { display: none;
+    opacity: 0;
+    top: -9999px;
+    transform: scale(0.9); } }
+
+@keyframes ulblinds { 0%, 50% { width: 50%; }
+  100% { width: 0; } }
+
+@keyframes ulblindscontainer { 0%, 50% { display: block;
+    opacity: 0; }
+  100% { display: block; } }
 
 #footer { padding-top: 5em; }
 
@@ -688,6 +686,15 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
   #hero .inside { max-width: 700px; left: calc(50% - 350px); }
   #navigation .nav-container .menu-right { width: 50%; z-index: 998; }
   #navigation .nav-container .menu { width: 50%; }
+  #navigation .nav-container .menu ul:before, #navigation .nav-container .menu ul:after { content: ''; display: block; right: auto; width: 0; height: 100%; position: absolute; z-index: 999; top: 0; background: #000f09; }
+  #navigation .nav-container .menu ul:before { left: -10%; }
+  #navigation .nav-container .menu ul:after { left: 50%; }
+  #navigation .nav-container .menu .ul-blinds:before, #navigation .nav-container .menu .ul-blinds:after { right: auto; animation: ulblinds .6s 1 linear; animation-fill-mode: forwards; }
+  #navigation .nav-container .menu .ul-blinds:before { left: auto; right: 0; }
+  #navigation .nav-container .menu .ul-blinds:after { right: 50%; left: auto; }
+  #navigation .nav-container .menu .ul-blinds-close:before, #navigation .nav-container .menu .ul-blinds-close:after { animation: ulblindsclose .6s 1 linear; animation-fill-mode: forwards; }
+  #navigation .nav-container .menu .ul-blinds:before { left: auto; right: 0; }
+  #navigation .nav-container .menu .ul-blinds:after { right: 50%; left: auto; }
   #navigation .nav-container .menu:before { opacity: 1; }
   .light-container .intro, .dark-container .intro { max-width: 700px; }
   .gallery ul { max-width: 730px; }

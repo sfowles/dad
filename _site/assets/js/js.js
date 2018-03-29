@@ -56,7 +56,9 @@ $(document).ready(function(){
 		$('.nested').removeClass('o-nested');
 		$('.menu-wrapper').removeClass('o-menu-wrapper o-nested u-nested');
 		$('.menu-wrapper').addClass('u-menu-wrapper');
-		$('.sub-nav-container ul').removeClass('opened');
+		$('.menu-wrapper ul').removeClass('ul-blinds ul-blinds-close');
+		$('.sub-nav-container ul').removeClass('ul-blinds');
+		$('.sub-nav-container ul').addClass('ul-blinds-close');
 	}
 
 	// Hamburger icon click state
@@ -112,27 +114,24 @@ $(document).ready(function(){
 		const nestedId = $(this).data('id');
 
 		e.preventDefault();
-		$('.menu-wrapper').toggleClass('o-nested');
-		$('.menu-wrapper').removeClass('u-nested');
-		$('.sub-nav-container ul').removeClass('u-opened');
+		$('.sub-nav-container ul').removeClass('ul-blinds-close');
+		$('.menu-wrapper ul').removeClass('ul-blinds');
+		$('.menu-wrapper ul').addClass('ul-blinds-close');
 
 		$('.sub-nav-container ul').each(function() {
 			if ($(this).data('id') == nestedId) {
-				$(this).addClass('opened');
+				$(this).addClass('ul-blinds');
 			}
 		});
-		//$(this).removeClass('o-nested').siblings(':first').slideToggle('fast');
-		//if ( $('.topbar')[0] ) {
-		//	$('.nested').not(this).removeClass('o-nested').siblings().slideUp('fast');
-		//}
 	});
 
 	// Back button functionality for sub navigation
 	$('.sub-nav-back').on('click', function() {
-		$('.sub-nav-container ul').removeClass('opened');
-		$('.sub-nav-container ul').addClass('u-opened');
+		$('.sub-nav-container ul').addClass('ul-blinds-close');
+		$('.menu-wrapper ul').addClass('ul-blinds');
+		$('.sub-nav-container ul').removeClass('ul-blinds');
+		$('.menu-wrapper ul').removeClass('ul-blinds-close');
 		$('.menu-wrapper, .nested').removeClass('o-nested o-menu-wrapper');
-		$('.menu-wrapper').addClass('u-nested');
 	});
 
 	// End main navigation

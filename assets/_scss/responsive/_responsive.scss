@@ -28,6 +28,56 @@
 			}
 			.menu {
 				width: 50%;
+
+				ul {
+					&:before,
+					&:after {
+						content: '';
+						display: block;
+						right: auto;
+						width: 0;
+						height: 100%;
+						position: absolute;
+						z-index: 999;
+						top: 0;
+						background: darken($deepForestGreen, 3%);
+					}
+
+					&:before {
+						left: -10%;
+					}
+
+					&:after {
+						left: 50%;
+					}
+				}
+				.ul-blinds:before,
+				.ul-blinds:after {
+					right: auto;
+					animation: ulblinds .6s 1 linear;
+					animation-fill-mode: forwards;
+				}
+				.ul-blinds:before {
+					left: auto;
+					right: 0;
+				}
+				.ul-blinds:after {
+					right: 50%;
+					left: auto;
+				}
+				.ul-blinds-close:before,
+				.ul-blinds-close:after {
+					animation: ulblindsclose .6s 1 linear;
+					animation-fill-mode: forwards;
+				}
+				.ul-blinds:before {
+					left: auto;
+					right: 0;
+				}
+				.ul-blinds:after {
+					right: 50%;
+					left: auto;
+				}
 			}
 			.menu:before {
 				opacity: 1;
