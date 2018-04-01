@@ -147,11 +147,25 @@
 }
 
 .gallery-description {
+	position: relative;
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: $fgMidGray;
 	margin: 2rem auto 10rem;
+	overflow: hidden;
+
+	&:after {
+		content: attr(data-description);
+		transition: max-width .6s linear;
+		max-width: 0;
+		color: $black;
+		overflow: hidden;
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+	}
 }
 
 // Gallery images
@@ -221,4 +235,8 @@
 		left: 0;
 		opacity: 1;
 	}
+}
+
+.gallery-active + .gallery-description:after {
+	max-width: 100%;
 }
