@@ -3,15 +3,71 @@
 	padding: 0 0 10em;
 	background: $bgLightGray;
 	.intro {
-		padding: 180px 0 0;
-		text-align: center;
-		max-width: 360px;
+		padding: 8em 0 0;
+		text-align: left;
+		width: 70%;
 		font-weight: 300;
 		margin: 0 auto;
 		p {
 			color: $fgDarkGray;
-			line-height: 24px;
-			margin: 0 0 50px;
+			line-height: 30px;
+			margin: 3em 0 5em;
+			max-width: 444px;
+		}
+		.p-small {
+			display: block;
+		}
+		.p-small + .p-small {
+			margin-top: 0;
+		}
+		.p-small, .p-small a {
+			font-size: 13px;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 1px;
+			color: $fgMidGray;
+			border-color: $fgMidGray;
+			margin-right: 1em;
+			margin-top: 1.5em;
+		}
+		a {
+			color: $fgDarkGray;
+			text-decoration: none;
+			position: relative;
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 1px;
+				left: auto;
+				width: 0;
+				height: 1px;
+				background: $fgMidGray;
+				transition: all .3s ease-out;
+			}
+
+			&:before {
+				right: 0;
+			}
+
+			&:after {
+				right: 50%;
+			}
+
+			&:hover:before,
+			&:hover:after {
+				width: 50%;
+				right: auto;
+			}
+
+			&:hover:before {
+				left: 0;
+			}
+
+			&:hover:after {
+				left: 50%;
+			}
 		}
 	}
 	.checkboxes, .radiobuttons {

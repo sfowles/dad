@@ -109,56 +109,103 @@
 .gallery {
 	margin: 0 auto;
 	width: 70%;
-	overflow: hidden;
-}
-
-.gallery-item-container {
-	position: relative;
-	width: 100%;
-	margin: 0 auto 10rem;
-	height: 80%;
-	overflow: hidden;
 }
 
 .gallery-item {
+	position: relative;
 	width: 100%;
-	height: 100%;
-	background-size: cover;
-	transform: scale(1.1);
-	transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-	&:hover {
-		transform: scale(1);
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: auto;
+		width: 0;
+		height: 100%;
+		overflow: hidden;
+		z-index: 1;
+		transition: width .6s linear;
+	}
+
+	&:hover:before {
+		width: 100%;
+		opacity: 0;
+	}
+
+	&:hover:after {
+		width: 100%;
+		right: auto;
+		left: 0;
+		opacity: 1;
 	}
 }
 
+.gallery-image {
+	position: relative;
+	filter: grayscale(1);
+	width: 100%;
+}
+
 .gallery-description {
-	bottom: -4em;
-	position: absolute;
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: $fgMidGray;
-}
-
-.gallery-image {
-	width: 100%;
-	transition: all .6s ease-in-out;
-
-	&:hover {
-		transform: scale(1.05);
-	}
+	margin: 2rem auto 10rem;
 }
 
 // Gallery images
-.gallery-hero-2 {
-	background: url('../img/hero-2.jpg') center no-repeat;
+.hero-2 {
+	&:before,
+	&:after {
+		background: url('../img/hero-2.jpg') top right no-repeat;
+		background-size: auto 100%;
+	}
+
+	&:before {
+		right: 0;
+		background-position-x: 100%;
+	}
+
+	&:after {
+		background-position-x: 0;
+		opacity: 0;
+	}
 }
 
-.gallery-hero-3 {
-	background: url('../img/hero-3.jpg') center no-repeat;
+.hero-3 {
+	&:before,
+	&:after {
+		background: url('../img/hero-3.jpg') top right no-repeat;
+		background-size: auto 100%;
+	}
+
+	&:before {
+		right: 0;
+		background-position-x: 100%;
+	}
+
+	&:after {
+		background-position-x: 0;
+		opacity: 0;
+	}
 }
 
-.gallery-hero-5 {
-	background: url('../img/hero-5.jpg') center no-repeat;
+.hero-5 {
+	&:before,
+	&:after {
+		background: url('../img/hero-5.jpg') top right no-repeat;
+		background-size: auto 100%;
+	}
+
+	&:before {
+		right: 0;
+		background-position-x: 100%;
+	}
+
+	&:after {
+		background-position-x: 0;
+		opacity: 0;
+	}
 }
