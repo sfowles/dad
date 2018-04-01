@@ -91,28 +91,29 @@ $(document).ready(function(){
 	function collisionCheck($div1, $div2, color, topOnly) {
 		var hasCollided = false;
 
-		$div2.each(function() {
+		$div1.each(function() {
 			var $this = $(this),
-				y1 = $div1.offset().top,
-				h1 = $div1.outerHeight(true),
+				y1 = $div2.offset().top,
+				h1 = $div2.outerHeight(true),
 				b1 = y1 + h1,
 				y2 = $this.offset().top,
 				h2 = $this.outerHeight(true),
 				b2 = y2 + h2;
 
-			if (b1 >= y2 && y1 <= b2 && !$('.menu').hasClass('o-menu')) {
+			if (b1 >= y2 && y1 <= b2) {
 				hasCollided = true;
 			}
 			if (topOnly && y1 > y2) {
 				hasCollided = true;
 			}
-		});
 
-		if (hasCollided == true) {
-			$div1.addClass(color);
-		} else {
-			$div1.removeClass(color);
-		}
+			if (hasCollided == true) {
+				$this.addClass(color);
+				hasCollided = false;
+			} else {
+				$this.removeClass(color);
+			}
+		});
 	}
 
 	// Do things on scroll
@@ -121,6 +122,8 @@ $(document).ready(function(){
 		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
 		collisionCheck($('.headline'), $('.headline-pos-anchor'), 'headline-pos-change', true);
 		collisionCheck($('.headline'), $('.headline-color-anchor'), 'headline-color-change', true);
+
+		collisionCheck($('.gallery-item'), $('.gallery-heading'), 'gallery-active');
 	});
 
 	// Do things on overlay click

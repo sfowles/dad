@@ -397,6 +397,8 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 .light-container .intro .p-small, .light-container .intro .p-small a { font-size: 13px; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; color: #a5a5a5; border-color: #a5a5a5; margin-right: 1em; margin-top: 1.5em; }
 
+.light-container .intro .p-dark { color: #787878; }
+
 .light-container .intro a { color: #787878; text-decoration: none; position: relative; }
 
 .light-container .intro a:before, .light-container .intro a:after { content: ''; position: absolute; bottom: 1px; left: auto; width: 0; height: 1px; background: #a5a5a5; transition: all .3s ease-out; }
@@ -703,15 +705,13 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 .gallery { margin: 0 auto; width: 70%; }
 
+.gallery-heading { position: fixed; display: block; left: 50%; top: 50%; padding: 5.8em 0; margin: 0 auto; z-index: -1; }
+
 .gallery-item { position: relative; width: 100%; }
 
 .gallery-item:before, .gallery-item:after { content: ''; position: absolute; top: 0; left: auto; width: 0; height: 100%; overflow: hidden; z-index: 1; transition: width .6s linear; }
 
-.gallery-item:hover:before { width: 100%; opacity: 0; }
-
-.gallery-item:hover:after { width: 100%; right: auto; left: 0; opacity: 1; }
-
-.gallery-image { position: relative; filter: grayscale(1); width: 100%; }
+.gallery-image { position: relative; filter: grayscale(1); opacity: 0.5; width: 100%; }
 
 .gallery-description { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #a5a5a5; margin: 2rem auto 10rem; }
 
@@ -732,6 +732,10 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 .hero-5:before { right: 0; background-position-x: 100%; }
 
 .hero-5:after { background-position-x: 0; opacity: 0; }
+
+.gallery-active:before { width: 100%; opacity: 0; }
+
+.gallery-active:after { width: 100%; right: auto; left: 0; opacity: 1; }
 
 .form { max-width: 1000px; text-align: center; margin: 0 auto; }
 

@@ -111,6 +111,16 @@
 	width: 70%;
 }
 
+.gallery-heading {
+	position: fixed;
+	display: block;
+	left: 50%;
+	top: 50%;
+	padding: 5.8em 0;
+	margin: 0 auto;
+	z-index: -1;
+}
+
 .gallery-item {
 	position: relative;
 	width: 100%;
@@ -127,23 +137,12 @@
 		z-index: 1;
 		transition: width .6s linear;
 	}
-
-	&:hover:before {
-		width: 100%;
-		opacity: 0;
-	}
-
-	&:hover:after {
-		width: 100%;
-		right: auto;
-		left: 0;
-		opacity: 1;
-	}
 }
 
 .gallery-image {
 	position: relative;
 	filter: grayscale(1);
+	opacity: 0.5;
 	width: 100%;
 }
 
@@ -207,5 +206,19 @@
 	&:after {
 		background-position-x: 0;
 		opacity: 0;
+	}
+}
+
+.gallery-active {
+	&:before {
+		width: 100%;
+		opacity: 0;
+	}
+
+	&:after {
+		width: 100%;
+		right: auto;
+		left: 0;
+		opacity: 1;
 	}
 }
