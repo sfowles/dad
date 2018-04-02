@@ -18,6 +18,7 @@ $(document).ready(function(){
 		$('.close').hide();
 		$('.nested').removeClass('o-nested');
 		$('.sub-nav-container ul').removeClass('opened');
+		$('.nav-container').toggleClass('is-open');
 		menuCounter++
 		if (menuCounter > 1) {
 			$(".menu").toggle("blind", {"direction": "right"}, 500);
@@ -60,12 +61,13 @@ $(document).ready(function(){
 		$('.menu-wrapper ul').removeClass('ul-blinds ul-blinds-close');
 		$('.sub-nav-container ul').removeClass('ul-blinds');
 		$('.sub-nav-container ul').addClass('ul-blinds-close');
+		$('.nav-container').removeClass('is-open');
 	}
 
 	// Hamburger icon click state
 	$('.hamburger').on('click', function() {
 		navToggle();
-		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
+		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), $('.light-container'), 'o-white');
 	});
 
 	// Do the Fisher-Yates shuffle
@@ -88,7 +90,7 @@ $(document).ready(function(){
 	}
 
 	// Check for DIV collision
-	function collisionCheck($div1, $div2, color, topOnly) {
+	function collisionCheck($div1, $div2, $div3, color, topOnly, reverse) {
 		var hasCollided = false;
 
 		$div1.each(function() {
@@ -107,11 +109,20 @@ $(document).ready(function(){
 				hasCollided = true;
 			}
 
-			if (hasCollided == true) {
-				$this.addClass(color);
-				hasCollided = false;
+			if (reverse == true) {
+				if (hasCollided == true) {
+					$div3.removeClass(color);
+					hasCollided = false;
+				} else {
+					$div3.addClass(color);
+				}
 			} else {
-				$this.removeClass(color);
+				if (hasCollided == true) {
+					$this.addClass(color);
+					hasCollided = false;
+				} else {
+					$this.removeClass(color);
+				}
 			}
 		});
 	}
@@ -119,17 +130,18 @@ $(document).ready(function(){
 	// Do things on scroll
 	$(document).on('scroll', function() {
 		navClose();
-		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
-		collisionCheck($('.headline'), $('.headline-pos-anchor'), 'headline-pos-change', true);
-		collisionCheck($('.headline'), $('.headline-color-anchor'), 'headline-color-change', true);
+		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), $('.light-container'), 'o-white');
+		collisionCheck($('.headline'), $('.headline-pos-anchor'), $('.headline-pos-anchor'), 'headline-pos-change', true);
+		collisionCheck($('.headline'), $('.headline-color-anchor'), $('.headline-color-anchor'), 'headline-color-change', true);
 
-		collisionCheck($('.gallery-item'), $('.gallery-heading'), 'gallery-active');
+		collisionCheck($('.gallery-item'), $('.gallery-heading'), $('.gallery-heading'), 'gallery-active');
+		collisionCheck($('.intro'), $('.phantom-logo'), $('.nav-container, .logo'), 'is-fixed', false, true);
 	});
 
 	// Do things on overlay click
 	$('.menu-overlay').on('click', function() {
 		navClose();
-		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), 'o-white');
+		collisionCheck($('.hamburger .bot, .ham'), $('.light-container'), $('.light-container'), 'o-white');
 	});
 
 	// Show nested nav items when a parent is clicked
