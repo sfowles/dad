@@ -1,4 +1,6 @@
 ---
+pages:
+- _posts/werawe.md
 hide_body: false
 is_partial: false
 fields:
