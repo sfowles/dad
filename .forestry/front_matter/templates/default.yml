@@ -12,4 +12,3 @@ fields:
   type: text
   hidden: false
   default: ''
-- type: text
