@@ -81,7 +81,7 @@
 				animation-delay: 500ms;
 			}
 			.bot {
-				background: #72990a;
+				background: $deepForestGreen;
 			}
 			.u-mid {
 				width: 100%;
@@ -400,6 +400,10 @@
 	animation: menuimage 2s 1 linear;
 	animation-fill-mode: forwards;
 }
+.menu-animate {
+	animation: menuanimate 1s 1 linear;
+	animation-fill-mode: forwards;
+}
 
 @keyframes menuimage {
 	0% {
@@ -413,6 +417,15 @@
 		margin-top: 0;
 		margin-left: 0;
 		opacity: 1;
+	}
+}
+
+@keyframes menuanimate {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0);
 	}
 }
 
