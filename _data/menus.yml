@@ -1,36 +1,36 @@
 ---
-Paintings:
-- identifier: painting-1
-  url: "/"
-  weight: 1
-  title: Nested painting option 1
-Pools:
-- identifier: pool-1
-  url: "/"
-  weight: 1
-  title: Nested pool option 1
-Landscapes:
-- identifier: landscape-2
-  url: "/"
-  weight: 2
-  title: Nested landscape option 2
-- identifier: landscape-1
-  url: "/"
-  weight: 1
-  title: Nested landscape option 1
 Main:
-- identifier: Landscapes
-  url: javascript:void(0)
-  weight: 2
-  description: Custom landscapes designed by Brad
-  title: Custom Landscape Architecture
-- identifier: Pools
-  url: javascript:void(0)
-  weight: 3
-  description: Custom pools designed by Brad
-  title: Custom Pool Design
 - identifier: Paintings
   url: "/option-1"
   weight: 1
   description: Hand-painted scenes of beaches, vineyards, and more
   title: Scenes &amp; Paintings
+- identifier: Pools
+  url: javascript:void(0)
+  weight: 3
+  description: Custom pools designed by Brad
+  title: Custom Pool Design
+- identifier: Landscapes
+  url: javascript:void(0)
+  weight: 2
+  description: Custom landscapes designed by Brad
+  title: Custom Landscape Architecture
+Pools:
+- identifier: pool-1
+  url: "/"
+  weight: 1
+  title: Nested pool option 1
+Paintings:
+- identifier: painting-1
+  url: "/"
+  weight: 1
+  title: Nested painting option 1
+Landscapes:
+- identifier: landscape-1
+  url: "/"
+  weight: 1
+  title: Nested landscape option 1
+- identifier: landscape-2
+  url: "/"
+  weight: 2
+  title: Nested landscape option 2
