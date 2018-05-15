@@ -37,7 +37,7 @@
   </div>
 
   <div class="sub-nav-container">
-    {% for item in site.menus.header %}
+    {% for item in site.menus.Main %}
       {% if item.children %}
         <ul data-id="{{ item.identifier }}" class="ul-blinds-close">
           <div class="sub-nav-back">
@@ -65,7 +65,7 @@
   </div>
 </div>
 <div class="menu-right">
-  {% for item in site.menus.header %}
+  {% for item in site.menus.Main %}
     <img src="{{ site.baseurl }}/assets/img/hero-{{ item.identifier }}.jpg" data-id="{{ item.identifier }}" />
   {% endfor %}
 </div>
