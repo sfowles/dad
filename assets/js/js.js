@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$('.top').toggleClass('u-top');
 		$('.mid').toggleClass('u-mid');
 		$('.bot').toggleClass('u-bot');
-		$('.top, .mid, .bot').toggleClass('menu-animate');
+		//$('.top, .mid, .bot').toggleClass('menu-animate');
 		$('.hamburger').toggleClass('ham opacity');
 		//$('.menu').toggleClass('o-menu');
 		$('.menu-right').toggleClass('o-menu-right');
@@ -51,7 +51,7 @@ $(document).ready(function(){
 		$('.top').removeClass('u-top');
 		$('.mid').removeClass('u-mid');
 		$('.bot').removeClass('u-bot');
-		$('.top, .mid, .bot').addClass('menu-animate');
+		//$('.top, .mid, .bot').addClass('menu-animate');
 		$('.hamburger').removeClass('opacity').addClass('ham');
 		$('.menu-overlay').fadeOut('slow');
 		$('.close').hide();

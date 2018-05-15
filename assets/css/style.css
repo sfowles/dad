@@ -213,7 +213,7 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .hamburger .mid { background: #009aba; transition-delay: 150ms; animation-delay: 500ms; }
 
-#navigation .nav-container .hamburger .bot { background: #72990a; }
+#navigation .nav-container .hamburger .bot { background: #001e12; }
 
 #navigation .nav-container .hamburger .u-mid { width: 100%; }
 
@@ -321,6 +321,8 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 .animate-in { opacity: 1; animation: menuimage 2s 1 linear; animation-fill-mode: forwards; }
 
+.menu-animate { animation: menuanimate 1s 1 linear; animation-fill-mode: forwards; }
+
 @keyframes menuimage { 0% { height: 104%;
     margin-left: -2%;
     margin-top: -2%;
@@ -329,6 +331,9 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
     margin-top: 0;
     margin-left: 0;
     opacity: 1; } }
+
+@keyframes menuanimate { 0% { transform: translateX(100%); }
+  100% { transform: translateX(0); } }
 
 @keyframes menuwrapper { 0%, 25% { opacity: 0;
     margin-top: 20px; }
