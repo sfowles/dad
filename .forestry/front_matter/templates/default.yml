@@ -19,8 +19,3 @@ fields:
   default: ''
   config:
     required: false
-- type: text
-  label: Category
-  name: category
-  config:
-    required: true
