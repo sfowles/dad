@@ -243,7 +243,11 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 #navigation .nav-container .menu .sub-nav-container { position: absolute; display: block; width: 100%; }
 
+#navigation .nav-container .menu .sub-nav-container ul { display: none; }
+
 #navigation .nav-container .menu .sub-nav-container ul:before, #navigation .nav-container .menu .sub-nav-container ul:after { width: 50%; }
+
+#navigation .nav-container .menu .sub-nav-container ul.ul-blinds { display: block; }
 
 #navigation .nav-container .menu .sub-nav-container ul.opened { display: block; }
 
