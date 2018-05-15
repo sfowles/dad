@@ -15,11 +15,6 @@ Main:
   weight: 2
   description: Custom landscapes designed by Brad
   title: Custom Landscape Architecture
-Pools:
-- identifier: pool-1
-  url: "/"
-  weight: 1
-  title: Nested pool option 1
 Paintings:
 - identifier: painting-1
   url: "/"
