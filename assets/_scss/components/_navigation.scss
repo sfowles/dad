@@ -178,10 +178,15 @@
 				width: 100%;
 			}
 			.sub-nav-container ul {
+				display: none;
 
 				&:before,
 				&:after {
 					width: 50%;
+				}
+
+				&.ul-blinds {
+					display: block;
 				}
 			}
 			.sub-nav-container ul.opened {
