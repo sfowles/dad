@@ -717,15 +717,19 @@ button:active, input[type=submit]:active { position: relative; top: 1px; }
 
 .gallery { margin: 0 auto; width: 70%; }
 
+.gallery a { text-decoration: none; }
+
+.gallery a:hover > .gallery-item .gallery-description { color: #000; }
+
 .gallery-heading { position: fixed; display: block; left: 50%; top: 50%; padding: 5.8em 0; margin: 0 auto; z-index: -1; }
 
 .gallery-item { position: relative; width: 100%; }
 
 .gallery-item:before, .gallery-item:after { content: ''; position: absolute; top: 0; left: auto; width: 0; height: 100%; overflow: hidden; z-index: 1; transition: width .6s linear; }
 
-.gallery-image { position: relative; filter: grayscale(1); opacity: 0.5; width: 100%; }
+.gallery-item img { position: relative; width: 100%; }
 
-.gallery-description { position: relative; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #a5a5a5; margin: 2rem auto 10rem; overflow: hidden; }
+.gallery-description { position: relative; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #a5a5a5; margin: 2rem auto 10rem; overflow: hidden; transition: all .2s ease-in-out; }
 
 .gallery-description:after { content: attr(data-description); transition: max-width .6s linear; max-width: 0; color: #000; overflow: hidden; position: absolute; display: block; top: 0; left: 0; }
 

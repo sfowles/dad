@@ -109,6 +109,14 @@
 .gallery {
 	margin: 0 auto;
 	width: 70%;
+
+	a {
+		text-decoration: none;
+
+		&:hover > .gallery-item .gallery-description {
+			color: #000;
+		}
+	}
 }
 
 .gallery-heading {
@@ -139,10 +147,8 @@
 	}
 }
 
-.gallery-image {
+.gallery-item img {
 	position: relative;
-	filter: grayscale(1);
-	opacity: 0.5;
 	width: 100%;
 }
 
@@ -154,6 +160,7 @@
 	color: $fgMidGray;
 	margin: 2rem auto 10rem;
 	overflow: hidden;
+	transition: all .2s ease-in-out;
 
 	&:after {
 		content: attr(data-description);
